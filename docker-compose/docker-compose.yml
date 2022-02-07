@@ -21,9 +21,9 @@ services:
       - /var/postgres-data:/var/lib/postgresql/data
   sonarqube:
     image: sonarqube:lts
-    "command": [
-      "-Dsonar.search.javaAdditionalOpts=-Dnode.store.allow_mmap=false"
-    ]
+    #"command": [
+    #  "-Dsonar.search.javaAdditionalOpts=-Dnode.store.allow_mmap=false"
+    #]
     ports:
       - "9000:9000"
       - "9092:9092"
