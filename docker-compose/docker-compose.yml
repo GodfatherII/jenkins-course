@@ -26,6 +26,7 @@ services:
       args: 
         - -Dsonar.web.context=/sonar
         - -Dsonar.es.bootstrap.checks.disable="true"
+        - -Des.enforce.bootstrap.checks="false"
     ports:
       - "9000:9000"
       - "9092:9092"
