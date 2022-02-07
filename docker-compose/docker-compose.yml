@@ -21,6 +21,11 @@ services:
       - /var/postgres-data:/var/lib/postgresql/data
   sonarqube:
     image: sonarqube:lts
+    command:
+      - /bin/bash
+      - -c
+      - |
+        sysctl -w vm.max_map_count=262144
     ports:
       - "9000:9000"
       - "9092:9092"
