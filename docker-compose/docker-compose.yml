@@ -21,12 +21,9 @@ services:
       - /var/postgres-data:/var/lib/postgresql/data
   sonarqube:
     image: sonarqube:lts
-    build:
-      context: .
-      args: 
-        - -Dsonar.web.context=/sonar
-        - -Dsonar.es.bootstrap.checks.disable="true"
-        - -Des.enforce.bootstrap.checks="false"
+    "command": [
+      "-Dsonar.search.javaAdditionalOpts=-Dnode.store.allow_mmapfs=false"
+    ]
     ports:
       - "9000:9000"
       - "9092:9092"
