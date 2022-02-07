@@ -21,7 +21,9 @@ services:
       - /var/postgres-data:/var/lib/postgresql/data
   sonarqube:
     image: sonarqube:lts
-    args: 
+    build:
+      context: .
+      args: 
         - -Dsonar.web.context=/sonar
         - -Dsonar.es.bootstrap.checks.disable=true
     ports:
