@@ -28,6 +28,8 @@ RUN mkdir -p /tmp/download && \
 # expose ssh port
 EXPOSE 22
 
+RUN chmod +x entrypoint.sh
+
 # make sure host keys are regenerated before sshd starts
 COPY entrypoint.sh /entrypoint.sh
 
